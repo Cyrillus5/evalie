@@ -1,0 +1,175 @@
+.Works-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 97vw;
+    margin-bottom: 20px;
+}
+
+.Works-line {
+    background-color: #DEE2E6;
+    height: 1px;
+}
+
+.Works-line-recap {
+    background-color: #DEE2E6;
+    height: 1px;
+    width: 250px;
+}
+
+select {
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    border-radius: 4px; /* Arrondir les coins */
+    padding: 20px; /* Ajuster le padding à votre préférence */
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px; /* Ajuster la taille de la police à votre préférence */
+    appearance: none; /* Enlève le style par défaut du navigateur */
+    -webkit-appearance: none; /* Enlève le style par défaut pour Safari */
+    -moz-appearance: none; /* Enlève le style par défaut pour Firefox */
+    position: relative;
+    background-image: url('/arrow-up.png'); /* Remplacer par le chemin de votre icône de flèche */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Ajuster en fonction de votre design */
+    background-size: 12px;
+    max-width: 90vw;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+select:focus {
+    background-image: url('/arrow-down.png');
+    background-color: white;
+}
+
+/* Supprimer la couleur bleue des options */
+select option {
+    background-color: transparent; /* Définir la couleur d'arrière-plan des options à transparent */
+    color: black; /* Définir la couleur du texte des options à noir */
+}
+
+
+/* Afficher la liste des options en dessous du select */
+select::-ms-expand {
+    display: none;
+}
+
+label {
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: white;
+    border-color: black;
+    border: 2px solid;
+    padding: 10px;
+    width: 160px;
+}
+
+button:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+input {    
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    ;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.Works-form-buttonSubmit {
+    background-color:#618DA5;
+    color: white;
+    border: none;
+}
+
+.Works-form-buttonSubmit:hover {
+    background-color:#496c7f;
+}
+
+.Works-form-recap-text {
+    font-style: italic;
+    margin-top: 0px;
+}
+
+.Works-form-error {
+    font-style:italic ;
+    color: rgb(218, 54, 54);
+    font-size: 12px;
+}
+
+.Results-loading {
+    position: fixed; /* or absolute, depending on your layout */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* White with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above all other content */
+}
+
+.Results-loading-loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #618DA5 #618DA5 transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  .Results-loading-loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent #FF3D00 #FF3D00;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+      
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+      

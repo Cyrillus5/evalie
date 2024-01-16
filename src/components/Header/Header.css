@@ -1,0 +1,25 @@
+.Header {
+    height: 50px;
+    width: 100%;
+    top: 30px;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.Header-logo {
+    height: 40px;
+    width: 40px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .Header {
+        top: 20px;
+    }
+}
