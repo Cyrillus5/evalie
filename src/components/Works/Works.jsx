@@ -49,7 +49,7 @@ function Works () {
         setIsLoading(true);
         try{
             const typeHouseLowerCase = typeHouse.toLowerCase();
-            const response = await axios.get('http://localhost:3001/eligible-systems', {
+            const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/eligible-systems', {
                 params: { codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase }
             });
             dispatch(setResults(response.data));
@@ -65,7 +65,7 @@ function Works () {
 
     const handleSetCollectivity = async (zipCode) => {
         try{
-            const response = await axios.get('http://localhost:3001/collectivities-list', {
+            const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/collectivities-list', {
                 params: { zipCode }
             });
             setCodeCollectivity(response.data.code);
@@ -111,7 +111,7 @@ function Works () {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const response = await axios.get('http://localhost:3001/works-list')
+                const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/works-list')
                 setItems(response.data);
                 setError("");
             } catch(error) {
