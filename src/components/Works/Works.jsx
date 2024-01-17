@@ -13,6 +13,7 @@ import isZipCode from "../../services/isZipCode";
 import './Works.css';
 
 function Works () {
+    const endPointUrl ="api.evalie.fr";
     const kindHouse = ["Maison", "Appartement"];
 
     const navigate = useNavigate();
@@ -49,7 +50,7 @@ function Works () {
         setIsLoading(true);
         try{
             const typeHouseLowerCase = typeHouse.toLowerCase();
-            const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/eligible-systems', {
+            const response = await axios.get(`https://${endPointUrl}/eligible-systems`, {
                 params: { codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase }
             });
             dispatch(setResults(response.data));
@@ -65,7 +66,7 @@ function Works () {
 
     const handleSetCollectivity = async (zipCode) => {
         try{
-            const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/collectivities-list', {
+            const response = await axios.get(`https://${endPointUrl}/collectivities-list`, {
                 params: { zipCode }
             });
             setCodeCollectivity(response.data.code);
@@ -111,7 +112,7 @@ function Works () {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const response = await axios.get('https://api-evalie-63184a7bc1ac.herokuapp.com/works-list')
+                const response = await axios.get(`https://${endPointUrl}/works-list`)
                 setItems(response.data);
                 setError("");
             } catch(error) {
@@ -189,7 +190,7 @@ function Works () {
                     <p>Code postal du logement concerné</p>
                     <p className="Works-form-recap-text">{ nameCollectivity } { zipCode }</p>
                     <button type="button" onClick={() => setZipCodeSelected("off")}>Etape précédente</button>
-                    <button type="submit" className="Works-form-buttonSubmit">Trouver les aides possibles</button>
+                    {nameCollectivity ? (<button type="submit" className="Works-form-buttonSubmit">Trouver les aides possibles</button>) : <p className="Works-form-textBeforeSubmit">Chargement des données ...</p>}
                     </>
                 ) : null}
                 { (isLoading) ? (

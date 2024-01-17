@@ -112,6 +112,13 @@ input:focus {
     font-size: 12px;
 }
 
+.Works-form-textBeforeSubmit {
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(185, 185, 185);
+    text-align: center;
+}
+
 .Results-loading {
     position: fixed; /* or absolute, depending on your layout */
     top: 0;
