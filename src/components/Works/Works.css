@@ -22,17 +22,17 @@ select {
     background-color: transparent;
     text-align: center;
     border: none;
-    border-radius: 4px; /* Arrondir les coins */
-    padding: 20px; /* Ajuster le padding à votre préférence */
+    border-radius: 4px;
+    padding: 20px;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px; /* Ajuster la taille de la police à votre préférence */
-    appearance: none; /* Enlève le style par défaut du navigateur */
-    -webkit-appearance: none; /* Enlève le style par défaut pour Safari */
-    -moz-appearance: none; /* Enlève le style par défaut pour Firefox */
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     position: relative;
-    background-image: url('/arrow-up.png'); /* Remplacer par le chemin de votre icône de flèche */
+    background-image: url('/arrow-up.png');
     background-repeat: no-repeat;
-    background-position: right 10px center; /* Ajuster en fonction de votre design */
+    background-position: right 10px center;
     background-size: 12px;
     max-width: 90vw;
     outline: none;
@@ -47,8 +47,8 @@ select:focus {
 
 /* Supprimer la couleur bleue des options */
 select option {
-    background-color: transparent; /* Définir la couleur d'arrière-plan des options à transparent */
-    color: black; /* Définir la couleur du texte des options à noir */
+    background-color: transparent;
+    color: black;
 }
 
 
@@ -120,16 +120,16 @@ input:focus {
 }
 
 .Results-loading {
-    position: fixed; /* or absolute, depending on your layout */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8); /* White with opacity */
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure it's above all other content */
+    z-index: 1000;
 }
 
 .Results-loading-loader {

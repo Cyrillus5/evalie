@@ -5,9 +5,9 @@
     align-items: center;
     background-image: url('/house-evalie.png');
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     width: 100vw;
+    min-height: 100vh;
 }
 
 .Results-h1 {
