@@ -45,13 +45,29 @@ function Works () {
         setTypeHouse(event.target.value);
         };
 
+    const delay = (ms) => new Promise(res => setTimeout(res, ms));
+
+    const maxRetries = 3;
+
+    const fetchWithRetry = async (url, params, retries = maxRetries, delayDuration = 2000) => {
+        try {
+            const response = await axios.get(url, { params, timeout: 10000 });
+            return response;
+        } catch (error) {
+            if (retries === 0) throw error;
+            console.log(`Tentative restante : ${retries}. Nouvel essai...`);
+            await delay(delayDuration);
+            return await fetchWithRetry(url, params, retries - 1, delayDuration);
+        }
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsLoading(true);
         try{
             const typeHouseLowerCase = typeHouse.toLowerCase();
-            const response = await axios.get(`https://${endPointUrl}/eligible-systems`, {
-                params: { codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase }
+            const response = await fetchWithRetry(`https://${endPointUrl}/eligible-systems`, {
+                codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase
             });
             dispatch(setResults(response.data));
             setError("");

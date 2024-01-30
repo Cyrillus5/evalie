@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = '';
+const initialState = 'Audit énergétique';
 
 export const selectedWorkSlice = createSlice({
     name: 'workSelected',
