@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import logo from "/logo-evalie.png";
+import logo from "/logo-evalie-without-colors.png";
 import './Header.css';
 
 function Header () {

@@ -3,13 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 97vw;
-    margin-bottom: 20px;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFFFFD;
+    padding-top: 40px;
 }
 
 .Works-line {
-    background-color: #DEE2E6;
-    height: 1px;
+    background-color: #747373;
+    height: 2px;
 }
 
 .Works-line-recap {
@@ -24,6 +26,7 @@ select {
     border: none;
     border-radius: 4px;
     padding: 20px;
+    padding-right: 30px;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     appearance: none;
@@ -51,7 +54,6 @@ select option {
     color: black;
 }
 
-
 /* Afficher la liste des options en dessous du select */
 select::-ms-expand {
     display: none;
@@ -65,10 +67,10 @@ button {
     margin-top: 20px;
     border-radius: 30px;
     background-color: white;
-    border-color: black;
-    border: 2px solid;
+    border: 2px solid #747373;
     padding: 10px;
     width: 160px;
+    transition: 0.5s;
 }
 
 button:hover {

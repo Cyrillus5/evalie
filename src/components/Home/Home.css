@@ -177,3 +177,21 @@
         width: 94%;
     }
 }
+
+@media only screen and (max-width: 310px) {
+    .Home-card-main-title {
+        position: fixed;
+        font-size: 1.3rem;
+        margin-top: 10px;
+        right: 20px;
+        top: 60px;
+    }
+
+    .Home-card-main-text {
+        position: fixed;
+        font-size: 0.9rem;
+        right: 20px;
+        top: 90px;
+        padding-top: 10px;
+    }
+}
