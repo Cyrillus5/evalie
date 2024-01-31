@@ -90,9 +90,10 @@ function Works () {
             setCodeCollectivityDepartment(response.data.codeDepartement);
             setNameCollectivity(response.data.nom);
             setError("");
+            setZipCodeSelected("on");
         } catch(error) {
             console.log(error);
-            setError(" Une erreur est intervenue pour récupérer les informations concernant la collectivité.")
+            setError("Ce code postal n'est pas connu.")
         }
     };
 
@@ -116,7 +117,6 @@ function Works () {
 
     const handleClickZipCode = () => {
         if (isZipCode(zipCode)){
-            setZipCodeSelected("on");
             setError("");
             handleSetCollectivity(zipCode)
         } else {
@@ -187,7 +187,7 @@ function Works () {
                             <Line className={"Works-line"} />
                             <input type='text' placeholder='Code postal...' value={zipCode} onChange={(e) => setZipCode(e.target.value)}></input>
                         </label>
-                        { (error && !isZipCode(zipCode)) ? <p className="Works-form-error">{error}</p> : null }
+                        { (error) ? <p className="Works-form-error">{error}</p> : null }
                         <button type="button" onClick={() => setTypeHouseSelected("off")}>Etape précédente</button>
                         <button type="button" onClick={() => handleClickZipCode()}>Etape suivante</button>                        
                     </>
