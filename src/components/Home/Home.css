@@ -1,29 +1,25 @@
 .Home {
-    position: relative;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    background-image: url('/house-evalie.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y:bottom ;
+    background-position-x: center;
 }
 
 .Home-card {
     width: 100vw;
-    height: 100vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
-}
-
-.Home-card-picture {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    padding-bottom: 20px;
 }
 
 .Home-card-main {
-    position: absolute;
-    right: 0;
-    transform: translateY(-50%);
+    top: 40px;
+    margin-right: 20px;
     color: white;
     text-align: right;
     padding-right: 20px;
@@ -61,14 +57,8 @@
         justify-content:initial;
     }
 
-    .Home-card-picture {
-        width: 100vw;
-        height: 100vh;
-    }
-
     .Home-card-main {
         position: static;
-        transform: none;
         text-align: left;
         padding: 0 20px;
         max-width: 100%;
@@ -86,7 +76,7 @@
     .Home-card-main-text {
         font-size: 0.8rem;
         position: absolute;
-        top: 14%;
+        top: 60px;
         right: 10px;
         text-align: right;
     }
@@ -128,12 +118,6 @@
         align-items: center;
     }
 
-    .Home-card-picture {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-    }
-
     .Home-card-main {
         top: 40px;
         right: 0;
@@ -142,7 +126,6 @@
         padding: 20px;
         z-index: 1;
         text-align: right;
-        transform: none;
     }
 
     .Home-card-main-title,
