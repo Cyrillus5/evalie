@@ -2,7 +2,7 @@
     min-height: 100vh;
 }
 
-p {
+p, td{
     color: black;
 }
 

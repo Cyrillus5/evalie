@@ -32,10 +32,12 @@
 
 .Home-card-main-title {
     font-size: 2.5rem;
+    color: white;
 }
 
 .Home-card-main-text { 
     font-size: 0.8rem;
+    color: white;
 }
 
 .Home-card-main-button {
