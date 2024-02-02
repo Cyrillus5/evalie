@@ -17,6 +17,12 @@ p, td{
     padding-top: 40px;
 }
 
+.Works-form-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Works-line {
     background-color: #747373;
     height: 2px;
