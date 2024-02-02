@@ -140,7 +140,7 @@ function Works () {
     }, []);
 
     return (
-        <div>
+        <div className="Works">
             <form onSubmit={handleSubmit} className="Works-form">
                 {itemsSelected === "off" ? (
                     <>

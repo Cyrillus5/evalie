@@ -1,3 +1,11 @@
+.Works {
+    min-height: 100vh;
+}
+
+p {
+    color: black;
+}
+
 .Works-form {
     display: flex;
     flex-direction: column;
@@ -88,6 +96,7 @@ input {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     ;
     font-size: 16px;
+    color: #3d3d3d;
     background-color: white;
     text-align: center;
     margin: 20px;
