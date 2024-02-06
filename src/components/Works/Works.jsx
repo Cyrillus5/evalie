@@ -63,21 +63,26 @@ function Works () {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true);
-        try{
-            const typeHouseLowerCase = typeHouse.toLowerCase();
-            const response = await fetchWithRetry(`https://${endPointUrl}/eligible-systems`, {
-                codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase
-            });
-            dispatch(setResults(response.data));
-            setError("");
-            navigate('/results');
-        } catch(error) {
-            console.log(error);
-            setError("An error occured to get eligible systems");
+
+        if (itemsSelected === "on" && typeHouseSelected === "on" && zipCodeSelected === "off") {
+            handleClickZipCode();
+        } else if (itemsSelected === "on" && typeHouseSelected === "on" && zipCodeSelected === "on") {
+            setIsLoading(true);
+            try{
+                const typeHouseLowerCase = typeHouse.toLowerCase();
+                const response = await fetchWithRetry(`https://${endPointUrl}/eligible-systems`, {
+                    codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase
+                });
+                dispatch(setResults(response.data));
+                setError("");
+                navigate('/results');
+            } catch(error) {
+                console.log(error);
+                setError("An error occured to get eligible systems");
+            }
+            setIsLoading(false);
+            dispatch(setNavigation(true))
         }
-        setIsLoading(false);
-        dispatch(setNavigation(true))
     };
 
     const handleSetCollectivity = async (zipCode) => {
