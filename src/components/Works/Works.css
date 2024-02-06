@@ -14,7 +14,6 @@ p, td{
     width: 100vw;
     min-height: 100vh;
     background-color: #FFFFFD;
-    padding-top: 40px;
 }
 
 .Works-form-select {
@@ -203,5 +202,4 @@ input:focus {
     100% {
       transform: rotate(-360deg);
     }
-  }
-      
+  }      

@@ -1,0 +1,26 @@
+.Footer {
+    height: 30px;
+    width: 100vw;
+    bottom: 0;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Footer-Home {
+    color: white;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.Footer-Works {
+    color: black;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+a:hover {
+    cursor: pointer;
+}

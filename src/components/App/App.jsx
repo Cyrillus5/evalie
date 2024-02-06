@@ -6,10 +6,11 @@ import Header from '../Header/Header';
 import Results from '../Results/Results';
 
 import './App.css';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Header/>
       <Routes>
         <Route path="/works" element={<Works/>}/>
@@ -17,7 +18,8 @@ function App() {
         <Route path='/results' element={<Results/>}/>
         <Route path="/*" element={<Home />} />
       </Routes>
-    </>
+      <Footer/>
+    </div>
   )
 }
 
