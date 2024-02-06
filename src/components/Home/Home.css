@@ -159,6 +159,7 @@
         border: none;
         border-radius: 5px;
         padding: 10px;
+        margin-bottom: 10px;
         width: 95%;
     }
 }
