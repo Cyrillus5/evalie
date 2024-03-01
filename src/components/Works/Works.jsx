@@ -11,6 +11,9 @@ import Line from "../Line/Line";
 import isZipCode from "../../services/isZipCode";
 
 import './Works.css';
+import Item from "../Item/Item";
+import KindHouse from "../KindHouse/KindHouse";
+import ZipCode from "../ZipCode/ZipCode";
 
 function Works () {
     const endPointUrl ="api.evalie.fr";
@@ -148,55 +151,39 @@ function Works () {
         <div className="Works">
             <form onSubmit={handleSubmit} className="Works-form">
                 {itemsSelected === "off" ? (
-                    <>
-                        <label>
-                            <p>* Sélectionnez les travaux à réaliser</p>
-                            <Line className={"Works-line"} />
-                            <div className="Works-form-select">
-                               <select value={selectedItem} onChange={handleSelectChange}>
-                                    {items.map((item, index) => (
-                                        <option key={index} value={item.intitule}>
-                                            {item}
-                                        </option>
-                                    ))}
-                                </select> 
-                            </div>
-                            
-                        </label>
-                        { (error && !selectedItem) ? (<p className="Works-form-error">{error}</p>) : null }
-                        <button type="button" onClick={() => handleClickWorks()}>Etape suivante</button>
-                    </>
+                    <Item 
+                        lineClassName="Works-line" 
+                        selectClassName="Works-form-select" 
+                        errorClassName="Works-form-error" 
+                        errorMessage={error} 
+                        selectedItemName={selectedItem} 
+                        handleSelectChangeFunction={handleSelectChange} 
+                        listItems={items} 
+                        handleClickWorksFunction={handleClickWorks} 
+                    />
                 ) : null}
                 { (itemsSelected === "on" && typeHouseSelected === "off") ? (
-                    <>
-                    <label>
-                            <p>* Sélectionnez le type de logement</p>
-                            <Line className={"Works-line"} />
-                            <select value={typeHouse} onChange={handleSelectChangeTypeHouse}>
-                            {kindHouse.map((kind, index) => (
-                                    <option key={index} value={kind}>
-                                        {kind}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
-                        { (error && !typeHouse) ? (<p className="Works-form-error">{error}</p>) : null }
-                        <button type="button" onClick={() => setItemsSelected("off")}>Etape précédente</button>
-                        <button type="button" onClick={() => handleClickTypeHouse()}>Etape suivante</button>
-                    </>
+                    <KindHouse 
+                        lineClassName="Works-line" 
+                        typeHouseSelected={typeHouse} 
+                        handleSelectChangeTypeHouseFunction={handleSelectChangeTypeHouse} 
+                        kindHouseList={kindHouse} 
+                        errorMessage={error} 
+                        errorClassName="Works-form-error" 
+                        handleClickTypeHouseFunction={handleClickTypeHouse} 
+                        setItemsSelected={setItemsSelected}
+                    />
                 ) : null}
                 { (itemsSelected === "on" && typeHouseSelected === "on" && zipCodeSelected === "off") ? (
-                    <>
-                        <label>
-                            <p>* Code postal du logement concerné</p>
-                            <Line className={"Works-line"} />
-                            <input type='text' placeholder='Code postal...' value={zipCode} onChange={(e) => setZipCode(e.target.value)}></input>
-                        </label>
-                        { (error) ? <p className="Works-form-error">{error}</p> : null }
-                        <button type="button" onClick={() => setTypeHouseSelected("off")}>Etape précédente</button>
-                        <button type="button" onClick={() => handleClickZipCode()}>Etape suivante</button>                        
-                    </>
-                        
+                    <ZipCode
+                        lineClassName="Works-line"
+                        zipCodeSelected={zipCode}
+                        setZipCodeFunction={setZipCode}
+                        errorMessage={error}
+                        errorClassName="Works-form-error"
+                        setTypeHouseSelectedFunction={setTypeHouseSelected}
+                        handleClickZipCodeFunction={handleClickZipCode}
+                    />
                 ) : null }
                 { (itemsSelected === "on" && typeHouseSelected === "on" && zipCodeSelected === "on") ? (
                     <>
