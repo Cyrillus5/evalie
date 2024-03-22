@@ -3,15 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setResults } from "../../store/slices/resultsSlice";
 import { setNavigation } from "../../store/slices/navigationSlice";
-
 import axios from 'axios';
 
 import Line from "../Line/Line";
-
-import './Works.css';
 import Item from "../Item/Item";
 import KindHouse from "../KindHouse/KindHouse";
 import ZipCode from "../ZipCode/ZipCode";
+
+import './Works.css';
 
 function Works () {
     const navigate = useNavigate();
@@ -56,9 +55,12 @@ function Works () {
             setIsLoading(true);
             try{
                 const typeHouseLowerCase = typeHouse.toLowerCase();
-                const response = await fetchWithRetry(`https://${endPointUrl}/eligible-systems`, {
-                    codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase
-                });
+                const response = await fetchWithRetry(
+                    `https://${endPointUrl}/eligible-systems`, 
+                    {
+                        codeCollectivity, codeCollectivityDepartment, codeCollectivityRegion, selectedItem, typeHouseLowerCase
+                    }
+                );
                 dispatch(setResults(response.data));
                 setError("");
                 navigate('/results');

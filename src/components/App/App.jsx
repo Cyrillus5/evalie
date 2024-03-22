@@ -4,9 +4,9 @@ import Works from '../Works/Works';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
 import Results from '../Results/Results';
+import Footer from '../Footer/Footer';
 
 import './App.css';
-import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -16,11 +16,11 @@ function App() {
         <Route path="/works" element={<Works/>}/>
         <Route path='/' element={<Home/>}/>
         <Route path='/results' element={<Results/>}/>
-        <Route path="/*" element={<Home />} />
+        <Route path="/*" element={<Home />}/>
       </Routes>
       <Footer/>
     </div>
   )
 }
 
-export default App
+export default App;

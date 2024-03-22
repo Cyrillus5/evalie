@@ -1,15 +1,11 @@
 .Home {
     width: 100vw;
-    min-height: 100vh;
+    height: calc(100vh - 20px);
     background-image: url('/house-evalie.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y:bottom ;
     background-position-x: center;
-}
-
-.Home-card {
-    width: 100vw;
     overflow: hidden;
     display: flex;
     justify-content:end;
@@ -17,7 +13,7 @@
     padding-bottom: 20px;
 }
 
-.Home-card-main {
+.Home-main {
     top: 40px;
     margin-right: 20px;
     color: white;
@@ -26,17 +22,17 @@
     max-width: 350px;
 }
 
-.Home-card-main-title {
+.Home-main-title {
     font-size: 2.5rem;
     color: white;
 }
 
-.Home-card-main-text { 
+.Home-main-text { 
     font-size: 0.8rem;
     color: white;
 }
 
-.Home-card-main-button {
+.Home-main-button {
     font-size: 0.9rem;
     color: #618DA5;
     border: 2px transparent;
@@ -45,7 +41,7 @@
     width: 240px;
 }
 
-.Home-card-main-button:hover {
+.Home-main-button:hover {
     background-color: #ececec;
     color: #4d7c95;
     cursor: pointer;
@@ -53,18 +49,14 @@
 }
 
 @media only screen and (min-width: 581px) and (max-width: 800px) {
-    .Home-card {
-        justify-content:initial;
-    }
-
-    .Home-card-main {
+    .Home-main {
         position: static;
         text-align: left;
         padding: 0 20px;
         max-width: 100%;
     }
 
-    .Home-card-main-title {
+    .Home-main-title {
         font-size: 2rem;
         position: absolute;
         top: 1%;
@@ -73,7 +65,7 @@
         padding: 5px;
     }
 
-    .Home-card-main-text {
+    .Home-main-text {
         font-size: 0.8rem;
         position: absolute;
         top: 60px;
@@ -81,7 +73,7 @@
         text-align: right;
     }
 
-    .Home-card-main-button {
+    .Home-main-button {
         font-size: 0.8rem;
         position: absolute;
         top: 130px;
@@ -94,7 +86,7 @@
         width: 220px;
     }
 
-    .Home-card-main-button:hover {
+    .Home-main-button:hover {
         background-color: #618DA5;
         color: #ffff;
         cursor: pointer;
@@ -103,22 +95,14 @@
 
 @media only screen and (max-width: 580px) {
     .Home {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
         margin: 0;
-    }
-
-    .Home-card {
-        width: 100vw;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
     }
 
-    .Home-card-main {
+    .Home-main {
         top: 40px;
         right: 0;
         width: auto;
@@ -128,13 +112,13 @@
         text-align: right;
     }
 
-    .Home-card-main-title,
-    .Home-card-main-text {
+    .Home-main-title,
+    .Home-main-text {
         color: #FFFFFF;
         width: 90vw;
     }
 
-    .Home-card-main-title {
+    .Home-main-title {
         position: fixed;
         font-size: 1.5rem;
         margin-top: 10px;
@@ -142,14 +126,14 @@
         top: 60px;
     }
 
-    .Home-card-main-text {
+    .Home-main-text {
         position: fixed;
         font-size: 0.9rem;
         right: 20px;
         top: 90px;
     }
 
-    .Home-card-main-button {
+    .Home-main-button {
         position: fixed;
         font-size: 1rem;
         bottom: 20px;
@@ -165,7 +149,7 @@
 }
 
 @media only screen and (max-width: 310px) {
-    .Home-card-main-title {
+    .Home-main-title {
         position: fixed;
         font-size: 1.3rem;
         margin-top: 10px;
@@ -173,7 +157,7 @@
         top: 60px;
     }
 
-    .Home-card-main-text {
+    .Home-main-text {
         position: fixed;
         font-size: 0.9rem;
         right: 20px;

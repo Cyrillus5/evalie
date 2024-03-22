@@ -70,12 +70,10 @@ function Results () {
                         <h1 className='NoResults-h1'>Aides financières possibles</h1>
                         <h3>{ work }</h3>
                         <p className='NoResults-p'>Pas de resultats pour ce type de travaux :/</p>
-                    </div>
-                    
+                    </div>                    
                 </div>
             ) }
-        </>
-               
+        </>               
     )
 }
 

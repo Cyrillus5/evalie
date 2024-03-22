@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+
 import './Footer.css';
 
 function Footer (){
@@ -8,7 +9,9 @@ function Footer (){
 
     return (
         <div className="Footer">
-            <a href={urlTarget} target='_blank' rel="noreferrer"><p className={className}>@Cyril</p></a>
+            <a href={urlTarget} target='_blank' rel="noreferrer">
+                <p className={className}>@Cyril</p>
+            </a>
         </div>
     )
 }

@@ -11,14 +11,12 @@ function Home () {
 
     return (
         <div className='Home'>
-            <div className='Home-card'>
-                <div className='Home-card-main'>
-                    <h1 className='Home-card-main-title'>Rénovez votre logement</h1>  
-                    <p className='Home-card-main-text'>Des aides financières existent pour vous <br/>aider à renover votre logement</p>
-                    <button onClick={handleWorksClick} className='Home-card-main-button'>Quelles aides pour mes travaux ?</button>   
-                </div>                
-            </div>            
-        </div>
+            <div className='Home-main'>
+                <h1 className='Home-main-title'>Rénovez votre logement</h1>  
+                <p className='Home-main-text'>Des aides financières existent pour vous <br/>aider à renover votre logement</p>
+                <button onClick={handleWorksClick} className='Home-main-button'>Quelles aides pour mes travaux ?</button>   
+            </div>                
+        </div>            
     )
 }
 

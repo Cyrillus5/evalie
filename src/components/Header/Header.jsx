@@ -7,18 +7,22 @@ import './Header.css';
 
 function Header() {
     const navigate = useNavigate();
+    // Header visibility
     const [isVisible, setIsVisible] = useState(true);
+    // Last vertical window scroll position
     const [lastScrollY, setLastScrollY] = useState(window.scrollY);
     const [headerStyle, setHeaderStyle] = useState({
         backgroundColor: 'rgba(255, 255, 255, 0)'
-    });    
+    });
 
+    // Header visility when we scroll
     useEffect(() => {
         const handleScroll = () => {
+            // Handle header visibility
             const currentScrollY = window.scrollY;
             setIsVisible(lastScrollY > currentScrollY || currentScrollY < 10);
             setLastScrollY(currentScrollY);
-
+            // Handle header opacity
             if (currentScrollY < 60) {
                 setHeaderStyle({
                     backgroundColor: 'rgba(255, 255, 255, 0)'
@@ -41,7 +45,9 @@ function Header() {
 
     return (
         <div className={`Header ${!isVisible ? 'Header-hide' : ''}`} style={headerStyle}>
-            <a onClick={handleWorksClick}><img src={logo} className="Header-logo"/></a>
+            <a onClick={handleWorksClick}>
+                <img src={logo} className="Header-logo"/>
+            </a>
         </div>
     );
 }

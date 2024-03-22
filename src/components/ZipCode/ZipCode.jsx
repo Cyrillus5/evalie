@@ -1,10 +1,11 @@
-import Line from "../Line/Line";
-import PropTypes from 'prop-types';
-import isZipCode from "../../services/isZipCode";
 import axios from 'axios';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSelectedZipCode } from "../../store/slices/selectedZipCodeSlice";
+
+import Line from "../Line/Line";
+import PropTypes from 'prop-types';
+import isZipCode from "../../services/isZipCode";
 
 const ZipCode = ({lineClassName, errorMessage, errorClassName, setStep, setError, setCodeCollectivity, setCodeCollectivityRegion, setCodeCollectivityDepartment, setNameCollectivity, endPointUrl}) => {
     const dispatch = useDispatch();
@@ -12,9 +13,12 @@ const ZipCode = ({lineClassName, errorMessage, errorClassName, setStep, setError
 
     const handleSetCollectivity = async (zipCode) => {
         try{
-            const response = await axios.get(`https://${endPointUrl}/collectivities-list`, {
-                params: { zipCode }
-            });
+            const response = await axios.get(
+                `https://${endPointUrl}/collectivities-list`, 
+                {
+                    params: { zipCode }
+                }
+            );
             setCodeCollectivity(response.data.code);
             setCodeCollectivityRegion(response.data.codeRegion);
             setCodeCollectivityDepartment(response.data.codeDepartement);
@@ -35,7 +39,6 @@ const ZipCode = ({lineClassName, errorMessage, errorClassName, setStep, setError
         } else {
             setError("Merci de rentrer un code postal au bon format");
         }
-
     };
 
     return(

@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
-import Line from "../Line/Line";
 import { useDispatch, useSelector } from 'react-redux';
 import { setHouseTypeSelected } from '../../store/slices/selectedHouseTypeSlice';
+
+import PropTypes from 'prop-types';
+import Line from "../Line/Line";
 
 const KindHouse = ({ lineClassName, errorMessage, errorClassName, setError, setStep }) => {
     const kindHouseList = ["Maison", "Appartement"];
@@ -34,7 +35,10 @@ const KindHouse = ({ lineClassName, errorMessage, errorClassName, setError, setS
                     ))}
                 </select>
             </label>
-            {(errorMessage && !typeHouse) ? (<p className={errorClassName}>{errorMessage}</p>) : null}
+            {(errorMessage && !typeHouse) ?
+                (<p className={errorClassName}>{errorMessage}</p>)
+                : null
+            }
             <button type="button" onClick={() => setStep('first')}>Etape précédente</button>
             <button type="button" onClick={handleClickTypeHouse}>Etape suivante</button>
         </>

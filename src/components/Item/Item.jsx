@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import Line from "../Line/Line";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedWork } from '../../store/slices/selectedWorkSlice';
+
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import Line from "../Line/Line";
 
 const Item = ({lineClassName, selectClassName, errorClassName, errorMessage, setError, setStep, endPointUrl}) => {
     const dispatch = useDispatch();
@@ -54,7 +55,10 @@ const Item = ({lineClassName, selectClassName, errorClassName, errorMessage, set
                 </div>
                 
             </label>
-            { (errorMessage && !selectedItem) ? (<p className={errorClassName}>{errorMessage}</p>) : null }
+            { (errorMessage && !selectedItem) ?
+                (<p className={errorClassName}>{errorMessage}</p>)
+                : null 
+            }
             <button type="button" onClick={() => handleClickWorks()}>Etape suivante</button>
         </>
     )
