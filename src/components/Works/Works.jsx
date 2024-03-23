@@ -5,10 +5,10 @@ import { setResults } from "../../store/slices/resultsSlice";
 import { setNavigation } from "../../store/slices/navigationSlice";
 import axios from 'axios';
 
-import Line from "../Line/Line";
 import Item from "../Item/Item";
 import KindHouse from "../KindHouse/KindHouse";
 import ZipCode from "../ZipCode/ZipCode";
+import Recap from "../Recap/Recap";
 
 import './Works.css';
 
@@ -31,7 +31,6 @@ function Works () {
     const typeHouse = useSelector((state) => state.houseTypeSelected);
 
     const delay = (ms) => new Promise(res => setTimeout(res, ms));
-
     const maxRetries = 3;
 
     const fetchWithRetry = async (url, params, retries = maxRetries, delayDuration = 2000) => {
@@ -112,24 +111,18 @@ function Works () {
                     />
                 ) : null }
                 { step === "fourth" ? (
-                    <>
-                    <p><strong>Récapitulatif de vos données</strong></p>
-                    <Line className={"Works-line-recap"} />
-                    <p>Travaux souhaités</p>
-                    <p className="Works-form-recap-text">{ selectedItem }</p>
-                    <Line className={"Works-line-recap"} />
-                    <p>Type de logement</p>
-                    <p className="Works-form-recap-text">{ typeHouse }</p>
-                    <Line className={"Works-line-recap"} />
-                    <p>Code postal du logement concerné</p>
-                    <p className="Works-form-recap-text">{ nameCollectivity } { zipCode }</p>
-                    <button type="button" onClick={() => setStep("third")}>Etape précédente</button>
-                    {nameCollectivity ? (<button type="submit" className="Works-form-buttonSubmit">Trouver les aides possibles</button>) : <p className="Works-form-textBeforeSubmit">Chargement des données ...</p>}
-                    </>
+                    <Recap
+                        lineClassName="Works-line-recap"
+                        selectedItem={selectedItem}
+                        typeHouse={typeHouse}
+                        nameCollectivity={nameCollectivity}
+                        zipCode={zipCode}
+                        setStep={setStep}
+                    />
                 ) : null}
                 { (isLoading) ? (
-                    <div className="Results-loading">
-                        <span className="Results-loading-loader"></span>
+                    <div className="Works-loading">
+                        <span className="Works-loading-loader"></span>
                     </div>
                 ) : null}
             </form>            

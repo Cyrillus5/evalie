@@ -115,35 +115,14 @@ input:focus {
     outline: none;
 }
 
-.Works-form-buttonSubmit {
-    background-color:#618DA5;
-    color: white;
-    border: none;
-}
-
-.Works-form-buttonSubmit:hover {
-    background-color:#496c7f;
-}
-
-.Works-form-recap-text {
-    font-style: italic;
-    margin-top: 0px;
-}
-
 .Works-form-error {
     font-style:italic ;
     color: rgb(218, 54, 54);
     font-size: 12px;
 }
 
-.Works-form-textBeforeSubmit {
-    font-style: italic;
-    font-size: 14px;
-    color: rgb(185, 185, 185);
-    text-align: center;
-}
-
-.Results-loading {
+/* Loading */
+.Works-loading {
     position: fixed;
     top: 0;
     left: 0;
@@ -156,7 +135,7 @@ input:focus {
     z-index: 1000;
 }
 
-.Results-loading-loader {
+.Works-loading-loader {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -168,7 +147,7 @@ input:focus {
     animation: rotation 1s linear infinite;
   }
 
-  .Results-loading-loader::after {
+  .Works-loading-loader::after {
     content: '';  
     box-sizing: border-box;
     position: absolute;

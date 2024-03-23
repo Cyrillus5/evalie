@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSelectedZipCode } from "../../store/slices/selectedZipCodeSlice";
+import PropTypes from 'prop-types';
 
 import Line from "../Line/Line";
-import PropTypes from 'prop-types';
 import isZipCode from "../../services/isZipCode";
 
 const ZipCode = ({lineClassName, errorMessage, errorClassName, setStep, setError, setCodeCollectivity, setCodeCollectivityRegion, setCodeCollectivityDepartment, setNameCollectivity, endPointUrl}) => {

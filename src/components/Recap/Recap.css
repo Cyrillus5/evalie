@@ -1,0 +1,37 @@
+.Recap-text {
+    font-style: italic;
+    margin-top: 0px;
+}
+
+.Recap-buttonSubmit {
+    background-color:#618DA5;
+    color: white;
+    border: none;
+}
+
+.Recap-buttonSubmit:hover {
+    background-color:#496c7f;
+}
+
+.Recap-textBeforeSubmit {
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(185, 185, 185);
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: white;
+    border: 2px solid #747373;
+    padding: 10px;
+    width: 160px;
+    transition: 0.5s;
+    color: black;
+}
+
+button:hover {
+    background-color: rgb(230, 230, 230);
+}
+
