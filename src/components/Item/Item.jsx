@@ -52,8 +52,7 @@ const Item = ({lineClassName, selectClassName, errorClassName, errorMessage, set
                         </option>
                     ))}
                     </select> 
-                </div>
-                
+                </div>                
             </label>
             { (errorMessage && !selectedItem) ?
                 (<p className={errorClassName}>{errorMessage}</p>)

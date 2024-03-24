@@ -16,6 +16,7 @@ function Works () {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    // API endpoint
     const endPointUrl ="api.evalie.fr";
 
     const [nameCollectivity, setNameCollectivity] = useState("");
@@ -26,10 +27,14 @@ function Works () {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     
+    // Works selected
     const selectedItem = useSelector((state) => state.workSelected);
+    // Zipcode selected
     const zipCode = useSelector((state) => state.zipCodeSelected);
+    // Typehouse selected
     const typeHouse = useSelector((state) => state.houseTypeSelected);
 
+    // Retry fetch
     const delay = (ms) => new Promise(res => setTimeout(res, ms));
     const maxRetries = 3;
 
@@ -47,9 +52,8 @@ function Works () {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         if (step === "third") {
-            setStep("fourth");
+            setStep("third");
         } else if (step === "fourth") {
             setIsLoading(true);
             try{
@@ -68,6 +72,7 @@ function Works () {
                 setError("An error occured to get eligible systems");
             }
             setIsLoading(false);
+            // Allow to navigate to /results only if all steps are satisfied
             dispatch(setNavigation(true));
         }
     };
