@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 
 import pictureHomePage from '/house-evalie.png';
 
@@ -56,7 +57,7 @@ function Results () {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td dangerouslySetInnerHTML={{ __html: result.descriptif }} />
+                                        <td dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(result.descriptif) }} />
                                     </tr>
                                 </tbody>
                             </table>                   
